@@ -4,11 +4,73 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:TypingTest.MVVM.View"
+             xmlns:core="clr-namespace:TypingTest.Core"
+             xmlns:vm="clr-namespace:TypingTest.MVVM.ViewModel"
+             xmlns:mainWindowVm="clr-namespace:TypingTest.MVVM.ViewModel.MainWindowVM"
              mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="800">
-    <Border Margin="20"
-            Style="{StaticResource UserControlsBorderStyle}"
-            CornerRadius="10">
-        
-    </Border>
+    <UserControl.Resources>
+        <core:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+    </UserControl.Resources>
+    
+    <UserControl.DataContext>
+        <mainWindowVm:TestViewModel/>
+    </UserControl.DataContext>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+            <TextBlock Foreground="White" Text="Время: " FontSize="18"/>
+            <TextBlock Foreground="White" Text="{Binding TimeDisplay}" FontWeight="Bold" FontSize="18" Width="60"/>
+            
+            <TextBlock Foreground="White" Text=" | " FontSize="18" Margin="10,0"/>
+            <TextBlock Foreground="White" Text="Слов в минуту (WPM): " FontSize="18"/>
+            <TextBlock Foreground="White" Text="{Binding WPM, StringFormat={}{0:F0}}" FontWeight="Bold" FontSize="18" Width="50"/>
+            
+            <TextBlock Foreground="White" Text=" | " FontSize="18" Margin="10,0"/>
+            <TextBlock Foreground="White" Text="Точность: " FontSize="18"/>
+            <TextBlock Foreground="White" Text="{Binding Accuracy, StringFormat={}{0:F2}}" FontWeight="Bold" FontSize="18" Width="80"/>
+        </StackPanel>
+
+        <GroupBox Header="Слово для набору" Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="{Binding CurrentWord}" 
+                       TextWrapping="Wrap" 
+                       FontSize="36" 
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="White"/>
+        </GroupBox>
+
+        <GroupBox Header="Ваш ввод" Grid.Row="2" Margin="0,0,0,10">
+            <TextBox Text="{Binding UserInput, UpdateSourceTrigger=PropertyChanged}" 
+                     TextWrapping="NoWrap"
+                     Foreground="Black"
+                     FontSize="36" 
+                     Height="60"
+                     Padding="5"
+             
+            />
+        </GroupBox>
+
+        <Button Grid.Row="3" Command="{Binding StartTestCommand}" 
+                Height="50" Width="200"
+                Background="#000232" Foreground="White">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Content" Value="НАЧАТЬ ТЕСТ" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsTestRunning}" Value="True">
+                            <Setter Property="Content" Value="ЗАВЕРШИТЬ ТЕСТ" />
+                            <Setter Property="Background" Value="#CC0000" /> </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
 </UserControl>

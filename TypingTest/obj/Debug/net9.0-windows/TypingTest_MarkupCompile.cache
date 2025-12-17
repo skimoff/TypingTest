@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 D:\Универ\Course2\TypingTest\TypingTest\App.xaml
-7783575523
-
-19-1289351679
+91963502739
+21605808579
+26-1105125970
 205-610146157
-MainWindow.xaml;MVVM\View\GuideView.xaml;MVVM\View\LoginView.xaml;MVVM\View\ProfileView.xaml;MVVM\View\SettingView.xaml;MVVM\View\TestView.xaml;Resources\Styles\DarkStyle.xaml;
+MainWindow.xaml;MVVM\View\AuthorizationView.xaml;MVVM\View\GuideView.xaml;MVVM\View\LoginView.xaml;MVVM\View\ProfileView.xaml;MVVM\View\RegistrationView.xaml;MVVM\View\SettingView.xaml;MVVM\View\TestView.xaml;Resources\Styles\DarkStyle.xaml;
 
-True
+False
 

@@ -1,60 +1,19 @@
-﻿<Window x:Class="TypingTest.MVVM.View.LoginView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:TypingTest.MVVM.View"
-        mc:Ignorable="d"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown"
-        Background="Transparent"
-        AllowsTransparency="True"
-        Height="500"
-        Width="400">
-    <Border Style="{StaticResource MainWindowBorderStyle}"
-            CornerRadius="10">
-        
-        <Grid ShowGridLines="False">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-            <Grid Grid.Row="0"
-                  ShowGridLines="False">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0"
-                           FontWeight="Bold"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Foreground="#F2F2F2"
-                           Text="Log in"/>
-                <Button Grid.Column="2"
-                        
-                        Height="20"
-                        Width="20"
-                        BorderBrush="Transparent"
-                        BorderThickness="0"
-                        Content="-"/>
-                <Button Grid.Column="3"
-                        Click="Button_Quit"
-                        Height="20"
-                        Width="20"
-                        BorderBrush="Transparent"
-                        BorderThickness="0"
-                        Content="x"/>                
-            </Grid>
-            
-            <StackPanel Grid.Row="1"
-                        Margin="100 75 100 75">
-                <TextBlock Text="Typing test"
+﻿<UserControl x:Class="TypingTest.MVVM.View.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TypingTest.MVVM.View"
+             xmlns:viewModel="clr-namespace:TypingTest.MVVM.ViewModel"
+             xmlns:authorizationVm="clr-namespace:TypingTest.MVVM.ViewModel.AuthorizationVM"
+             mc:Ignorable="d"
+             d:DesignHeight="470" 
+             d:DesignWidth="400"
+             d:DataContext="{d:DesignInstance Type=authorizationVm:RegistrationViewModel, IsDesignTimeCreatable=True}">
+    <Grid>
+        <StackPanel Margin="100 75 100 75">
+                <TextBlock Text="Log in"
+                           Margin="0 0 0 15"
                            Style="{StaticResource TextBlockStyle}"/>
                 <TextBlock Text="Login"
                            Foreground="#F2F2F2"
@@ -67,6 +26,7 @@
                          FontSize="14"/>
                 
                 <TextBlock Text="Password"
+                           Margin="0 5 0 0"
                            Foreground="#F2F2F2"
                            FontSize="14"/>
                 <PasswordBox x:Name="PasswordBox"
@@ -77,16 +37,27 @@
                          VerticalAlignment="Center"
                          FontSize="14"/>
                 
+                <!--Изменить дизайн кнопок-->
                 <Button VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         Height="30"
                         Width="150"
-                        Command="{Binding LoginCommand}"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderThickness="1"
+                        
                         Margin="0 30 0 0"
                         Content="Log in"/>
+                <Button VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="30"
+                        Width="150"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderThickness="1"
+                        Command="{Binding NavigateToRegisterCommand}"
+                        Margin="0 10 0 0"
+                        Content="Back to registration"/>
             </StackPanel>
-        </Grid>
-        
-        
-    </Border>
-</Window>
+    </Grid>
+</UserControl>

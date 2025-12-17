@@ -1,0 +1,74 @@
+﻿<Window x:Class="TypingTest.MVVM.View.AuthorizationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TypingTest.MVVM.View"
+        xmlns:view="clr-namespace:TypingTest.MVVM.View"
+        xmlns:viewModel="clr-namespace:TypingTest.MVVM.ViewModel"
+        xmlns:authorizationVm="clr-namespace:TypingTest.MVVM.ViewModel.AuthorizationVM"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Height="500"
+        Width="400">
+    
+    <Window.DataContext>
+        <authorizationVm:AuthorizationViewModel />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type authorizationVm:LoginViewModel}">
+            <view:LoginView/>
+        </DataTemplate>
+            
+        <DataTemplate DataType="{x:Type authorizationVm:RegistrationViewModel}">
+            <view:RegistrationView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Border Style="{StaticResource MainWindowBorderStyle}"
+            CornerRadius="10">
+        
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0"
+                  ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Margin="5 0 0 0"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Foreground="#F2F2F2"
+                           Text="Log in"/>
+                
+                <!--Заменить символ на фото-->
+                <Button Grid.Column="3" 
+                        Height="20"
+                        Width="20"
+                        Style="{StaticResource ExitButton}"
+                        Click="Button_Quit"
+                        Content="x"/>
+            </Grid>
+            
+            <ContentControl Grid.Row="1" 
+                            Content="{Binding CurrentAutView}"/>
+        </Grid>
+        
+        
+    </Border>
+</Window>

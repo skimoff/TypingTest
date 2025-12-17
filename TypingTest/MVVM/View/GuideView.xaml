@@ -5,8 +5,100 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:TypingTest.MVVM.View"
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="800">
+    <!--#000232-->
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel Orientation="Vertical">
+                <Border Margin="10"
+                        Width="700"
+                        HorizontalAlignment="Left"
+                        CornerRadius="10"
+                        Background="#000232">
+                    <StackPanel Orientation="Vertical"
+                                Margin="10">
+                        <TextBlock Foreground="White"
+                                   FontSize="24"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Bold">
+                            Golden Rule: Master Touch Typing
+                        </TextBlock>
+
+                        <TextBlock Foreground="White"
+                                   FontSize="20"
+                                   Margin="20 0 0 0"
+                                   TextWrapping="Wrap">
+                            Touch typing (ten-finger typing) is the only way to type quickly.
+                            It involves using all ten fingers without having to look at the keyboard.
+                            Instead, your fingers memorize the key locations.
+                        </TextBlock>
+
+                        <TextBlock Foreground="White"
+                                   FontSize="20"
+                                   Margin="20 0 0 0"
+                                   TextWrapping="Wrap">
+                            Home Row Keys: Your fingers should always return to the "home row"—the
+                            ASDF JKL keys. These keys have small bumps for tactile orientation.
+                        </TextBlock>
+
+                        <TextBlock Foreground="White"
+                                   FontSize="24"
+                                   FontWeight="Bold">
+                            Correct fastening:
+                        </TextBlock>
+
+                        <TextBlock Foreground="White"
+                                   FontSize="20"
+                                   Margin="20 0 0 0"
+                                   TextWrapping="Wrap">
+                            Left hand: Four fingers (excluding the thumb) rest on the ASDF key.
+                            Right hand: Four fingers (excluding the thumb) rest on the JKL; key.
+                            Thumbs: Control only the SPACEBAR.
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+
+                <Border Margin="10"
+                        Width="700"
+
+                        HorizontalAlignment="Right"
+                        CornerRadius="10"
+                        Background="#000232">
+                    <StackPanel Orientation="Vertical"
+                                Margin="10">
+                        <TextBlock Foreground="White"
+                                   FontSize="24"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Bold">
+                            Tips for speed and accuracy
+                        </TextBlock>
+                        <TextBlock Foreground="White"
+                                   FontSize="20"
+                                   Margin="20 0 0 0"
+                                   TextWrapping="Wrap">
+                            At the initial stage, always prioritize accuracy.
+                            If you make a lot of mistakes, you'll have to spend time correcting them,
+                            which will negate the speed gains.<LineBreak />
+                            Start slow: For the first week, focus solely on typing correctly with the right finger, without looking at the keyboard.
+                            <LineBreak />
+                            Don't rush: Consciously slow down if you feel like you're about to make a mistake.
+                            <LineBreak />
+                            Establish Correct Posture<LineBreak />
+                            Proper posture reduces fatigue and increases efficiency:
+                            Back: Straight, pressed against the back of the chair.<LineBreak />
+                            Elbows: Bend at a 90-degree angle.<LineBreak />
+                            Wrists: Relaxed and not resting on the desk or the edge of the laptop.
+                            Keep them off the table or use a soft rest to keep them straight.<LineBreak />
+                            Distance to screen: 45-70 cm, center of screen at eye level.<LineBreak />
+                            Forget about looking at the keyboard<LineBreak />
+                            If you catch yourself looking down, stop.
+                            Even a quick glance disrupts your rhythm and wastes precious milliseconds. 
+                            Practice is the only way your brain and fingers will "automate" this skill.
+                        </TextBlock>
+
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

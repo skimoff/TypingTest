@@ -112,4 +112,35 @@
         <Setter Property="BorderThickness" Value=" 5"/>
         <Setter Property="CornerRadius" Value="10 "/>
     </Style>
+    
+    <Style TargetType="Button" x:Key="ExitButton">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="#595959"
+                            CornerRadius="10"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0">
+                        <TextBlock Text="{TemplateBinding Property = Content}"
+                                   VerticalAlignment="Center"
+                                   Foreground="#F2F2F2"
+                                   Margin="7 0 0 5"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#212226"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="#212226"/>
+                            <Setter Property="Foreground" Value="#F2F2F2"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
+    </Style>
 </ResourceDictionary>

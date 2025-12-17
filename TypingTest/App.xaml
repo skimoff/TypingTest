@@ -4,6 +4,7 @@
              xmlns:viewModel="clr-namespace:TypingTest.MVVM.ViewModel"
              xmlns:view="clr-namespace:TypingTest.MVVM.View"
              xmlns:local="clr-namespace:TypingTest"
+             xmlns:mainWindowVm="clr-namespace:TypingTest.MVVM.ViewModel.MainWindowVM"
              StartupUri="MainWindow.xaml">
     <!--/MVVM/View/LoginView.xaml-->
     <Application.Resources>
@@ -12,19 +13,19 @@
                 <ResourceDictionary Source="Resources/Styles/DarkStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
-            <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
+            <DataTemplate DataType="{x:Type mainWindowVm:ProfileViewModel}">
                 <view:ProfileView/>
             </DataTemplate>
              
-            <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
+            <DataTemplate DataType="{x:Type mainWindowVm:SettingViewModel}">
                 <view:SettingView/>
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
+            <DataTemplate DataType="{x:Type mainWindowVm:TestViewModel}">
                 <view:TestView/>
             </DataTemplate>
             
-            <DataTemplate DataType="{x:Type viewModel:GuideViewModel}">
+            <DataTemplate DataType="{x:Type mainWindowVm:GuideViewModel}">
                 <view:GuideView/>
             </DataTemplate>
             

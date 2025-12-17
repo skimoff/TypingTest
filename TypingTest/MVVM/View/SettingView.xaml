@@ -33,11 +33,12 @@
                 <RadioButton Height="25"
                              Width="100"
                              Content="UA"
-                             IsChecked="True"
+                             IsChecked="{Binding IsUkrSelected, Mode=TwoWay}"
                              Style="{StaticResource SettingRadioButton}"/>
                 <RadioButton Height="25"
                              Width="100"
                              Content="ENG"
+                             IsChecked="{Binding IsEngSelected, Mode=TwoWay}"
                              Style="{StaticResource SettingRadioButton}"/>
             </StackPanel>
         </StackPanel>

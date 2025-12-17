@@ -60,3 +60,12 @@ D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\TypingTes
 D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\TypingTest.csproj.Up2Date
 D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\GuideView.g.cs
 D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\GuideView.baml
+D:\Универ\Course2\TypingTest\TypingTest\bin\Debug\net9.0-windows\System.Data.SQLite.dll
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\TypingTest.sourcelink.json
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\AuthorizationView.g.cs
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\RegistrationView.g.cs
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\AuthorizationView.baml
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\MVVM\View\RegistrationView.baml
+D:\Универ\Course2\TypingTest\TypingTest\obj\Debug\net9.0-windows\TypingTest_Content.g.cs
+D:\Универ\Course2\TypingTest\TypingTest\bin\Debug\net9.0-windows\Resources\Text\Words_eng.txt
+D:\Универ\Course2\TypingTest\TypingTest\bin\Debug\net9.0-windows\Resources\Text\words_ukr.txt

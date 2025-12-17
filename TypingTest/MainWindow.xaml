@@ -6,6 +6,7 @@
         xmlns:view="clr-namespace:TypingTest.MVVM.View"
         xmlns:viewModel="clr-namespace:TypingTest.MVVM.ViewModel"
         xmlns:local="clr-namespace:TypingTest"
+        xmlns:mainWindowVm="clr-namespace:TypingTest.MVVM.ViewModel.MainWindowVM"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
@@ -18,11 +19,11 @@
         AllowsTransparency="True">
 
     <Window.DataContext>
-        <viewModel:MainViewModel />
+        <mainWindowVm:MainViewModel />
     </Window.DataContext>
 
     <Border Style="{StaticResource MainWindowBorderStyle}">
-        <Grid ShowGridLines="True">
+        <Grid ShowGridLines="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition />
