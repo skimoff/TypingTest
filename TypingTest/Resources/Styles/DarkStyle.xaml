@@ -143,4 +143,13 @@
         </Setter>
         
     </Style>
+    
+    <Style TargetType="Border" x:Key="BorderForProfile">
+        <Setter Property="Background" Value="#000232"/>
+        <Setter Property="CornerRadius" Value="10"/>
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="TextBlockForProfile">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
 </ResourceDictionary>

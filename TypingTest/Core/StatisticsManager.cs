@@ -22,7 +22,7 @@ public static class StatisticsManager
     public static void UpdateBestStats(TestResult newStats)
     {
         _totalTests++;
-        // Обновляем лучший результат, если текущий выше по WPM или при равенстве выше по точности
+        
         if (newStats.WPM > _bestStats.WPM || (newStats.WPM == _bestStats.WPM && newStats.Accuracy > _bestStats.Accuracy))
         {
             _bestStats = newStats;
@@ -37,7 +37,6 @@ public static class StatisticsManager
         {
             if (!Directory.Exists(FolderPath)) Directory.CreateDirectory(FolderPath);
             
-            // Сохраняем ТОЛЬКО статистику
             var data = new 
             { 
                 BestStats = _bestStats, 
@@ -62,7 +61,6 @@ public static class StatisticsManager
             if (data.TryGetProperty("TotalTests", out var t)) 
                 _totalTests = t.GetInt32();
         } catch { 
-            // Если файл поврежден, создаем чистый объект
             _bestStats = new TestResult { WPM = 0, Accuracy = 0 };
         }
     }

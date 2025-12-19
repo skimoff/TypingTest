@@ -84,15 +84,12 @@ public class TestViewModel : INotifyPropertyChanged
         {
             if (value == null) return;
 
-            // 1. ЗАПРЕТ BACKSPACE
-            // Если новая длина меньше старой — значит нажали стирание. Блокируем.
             if (_userInput != null && value.Length < _userInput.Length)
             {
                 OnPropertyChanged();
                 return;
             }
 
-            // 2. ОБРАБОТКА ПРОБЕЛА
             if (value.EndsWith(" "))
             {
                 if (value.Trim() == CurrentWord)
@@ -103,21 +100,18 @@ public class TestViewModel : INotifyPropertyChanged
                 OnPropertyChanged();
                 return;
             }
-
-            // 3. БЛОКИРОВКА ЛИШНЕГО (если слово уже набрано полностью)
+            
             if (_userInput == CurrentWord)
             {
                 OnPropertyChanged();
                 return;
             }
 
-            // 4. АВТОСТАРТ ТАЙМЕРА
             if (!_isTestRunning && !string.IsNullOrEmpty(value))
             {
                 StartTimerOnly();
             }
 
-            // 5. ПРОВЕРКА СИМВОЛА
             if (value.Length > (_userInput?.Length ?? 0))
             {
                 int index = value.Length - 1;
@@ -125,16 +119,13 @@ public class TestViewModel : INotifyPropertyChanged
                 {
                     if (value[index] == CurrentWord[index])
                     {
-                        // Верно — красим в зеленый и пропускаем символ в _userInput
                         CurrentWordChars[index].UnderlineColor = "#00FF00";
                     }
                     else
                     {
-                        // ОШИБКА — красим в красный, считаем ошибку, но НЕ ПРИНИМАЕМ в _userInput
                         CurrentWordChars[index].UnderlineColor = "#FF0000";
                         _totalErrors++;
                         CalculateMetrics();
-                        OnPropertyChanged(); // Чтобы текстбокс не принял неверную букву
                         return; 
                     }
                 }
@@ -344,12 +335,10 @@ public class TestViewModel : INotifyPropertyChanged
         double minutesElapsed = (DateTime.Now - _startTime).TotalMinutes;
         if (minutesElapsed < 0.01) minutesElapsed = 0.01;
 
-        // totalCorrect = все буквы из прошлых слов + буквы в текущем поле
         int totalCorrectOverall = _totalCorrectCharsAccumulated + (_userInput?.Length ?? 0);
 
         WPM = Math.Round((totalCorrectOverall / 5.0) / minutesElapsed, 0);
 
-        // Точность: Правильные / (Правильные + Ошибки)
         int totalTypedAttempts = totalCorrectOverall + _totalErrors;
 
         if (totalTypedAttempts > 0)

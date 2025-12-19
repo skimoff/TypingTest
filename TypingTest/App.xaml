@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TypingTest"
              xmlns:mainWindowVm="clr-namespace:TypingTest.MVVM.ViewModel.MainWindowVM"
              StartupUri="MainWindow.xaml">
-    <!--/MVVM/View/LoginView.xaml-->
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

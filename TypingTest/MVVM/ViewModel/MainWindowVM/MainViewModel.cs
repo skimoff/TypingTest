@@ -33,16 +33,13 @@ public class MainViewModel:ObservableObject
 
     public MainViewModel()
     {
-        // 1. Создаем объекты (Оставляем как есть, это верно)
         ProfileVm = new ProfileViewModel();
         SettingVm = new SettingViewModel();
         TestVm = new TestViewModel();
         GuideVm = new GuideViewModel();
-
-        // 2. Загружаем настройки
+        
         SettingsManager.Load(); 
-
-        // 3. ПРОВЕРКА (Добавил принудительное обновление)
+        
         if (string.IsNullOrEmpty(SettingsManager.UserName))
         {
             BlurRadius = 15; 
@@ -50,32 +47,25 @@ public class MainViewModel:ObservableObject
         }
         else
         {
-            // Если имя есть, гасим всё сразу
             BlurRadius = 0;
             IsRegistrationVisible = false;
             ProfileVm.LoadData();
         }
 
-        // 4. Команда сохранения (Добавил проверку на обновление интерфейса)
         SaveNameCommand = new RelayCommand(o =>
         {
             if (!string.IsNullOrWhiteSpace(NewUserName))
             {
-                // Сохраняем
                 SettingsManager.UserName = NewUserName;
                 SettingsManager.Save();
 
-                // Обновляем ProfileVm ДО того, как уберем блюр, 
-                // чтобы пользователь сразу увидел свое имя
                 ProfileVm.LoadData();
 
-                // Выключаем оверлей
                 BlurRadius = 0;
                 IsRegistrationVisible = false;
             }
         });
 
-        // 5. Стартовый экран и команды (Верно)
         CurrentView = ProfileVm;
     
         ProfileViewCommand = new RelayCommand(o => CurrentView = ProfileVm);

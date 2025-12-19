@@ -11,11 +11,9 @@ public class InvertBooleanConverter : IValueConverter
         {
             return !boolean;
         }
-        // Повертаємо оригінальне значення, якщо це не булевий тип
+        
         return value;
     }
-
-    // Зворотне перетворення (не використовується)
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value is bool boolean)

@@ -22,16 +22,16 @@
             <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    <RowDefinition Height="Auto"/> </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,30" HorizontalAlignment="Center">
-            <TextBlock Foreground="White" Text="Час: " FontSize="18"/>
-            <TextBlock Foreground="White" Text="{Binding TimeDisplay}" FontWeight="Bold" FontSize="18" Width="60"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="Час: " FontSize="18"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="{Binding TimeDisplay}" FontWeight="Bold" FontSize="18" Width="60"/>
             
-            <TextBlock Foreground="White" Text=" | " FontSize="18" Margin="10,0"/>
-            <TextBlock Foreground="White" Text="WPM: " FontSize="18"/>
-            <TextBlock Foreground="White" Text="{Binding WPM, StringFormat={}{0:F0}}" FontWeight="Bold" FontSize="18" Width="50"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text=" | " FontSize="18" Margin="10,0"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="WPM: " FontSize="18"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="{Binding WPM, StringFormat={}{0:F0}}" FontWeight="Bold" FontSize="18" Width="50"/>
             
-            <TextBlock Foreground="White" Text=" | " FontSize="18" Margin="10,0"/>
-            <TextBlock Foreground="White" Text="Точність: " FontSize="18"/>
-            <TextBlock Foreground="White" Text="{Binding Accuracy, StringFormat={}{0:F2}}" FontWeight="Bold" FontSize="18" Width="80"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text=" | " FontSize="18" Margin="10,0"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="Точність: " FontSize="18"/>
+            <TextBlock Style="{DynamicResource TextBlockForProfile}" Text="{Binding Accuracy, StringFormat={}{0:F2}}" FontWeight="Bold" FontSize="18" Width="80"/>
         </StackPanel>
 
         <GroupBox Header="Тренажер" Grid.Row="1" Margin="0,0,0,20">
@@ -48,7 +48,7 @@
                                 <TextBlock Text="{Binding CharValue}" 
                                            FontSize="48" 
                                            FontWeight="Bold"
-                                           Foreground="White" 
+                                           Style="{DynamicResource TextBlockForProfile}"
                                            HorizontalAlignment="Center"
                                            FontFamily="Consolas"/>
                                 <Border Height="5" Width="30" CornerRadius="2"

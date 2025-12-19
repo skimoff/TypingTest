@@ -4,7 +4,6 @@ namespace TypingTest.MVVM.ViewModel.MainWindowVM;
 
 public class SettingViewModel : ObservableObject
 {
-    // Свойства для ЯЗЫКА
     public bool IsUkrSelected
     {
         get => SettingsManager.Language == "ukr";
@@ -35,7 +34,6 @@ public class SettingViewModel : ObservableObject
         }    
     }
 
-    // Свойства для ТЕМЫ
     public bool IsDarkTheme
     {
         get => SettingsManager.Theme == "Dark";
@@ -44,7 +42,7 @@ public class SettingViewModel : ObservableObject
             if (value)
             {
                 SettingsManager.Theme = "Dark";
-                SettingsManager.ApplyTheme(); // ДОБАВЬ ЭТУ СТРОКУ
+                SettingsManager.ApplyTheme();
                 SettingsManager.Save();
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsLightTheme));
@@ -60,7 +58,7 @@ public class SettingViewModel : ObservableObject
             if (value)  
             {
                 SettingsManager.Theme = "Light";
-                SettingsManager.ApplyTheme(); // ДОБАВЬ ЭТУ СТРОКУ
+                SettingsManager.ApplyTheme();
                 SettingsManager.Save();
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(IsDarkTheme));

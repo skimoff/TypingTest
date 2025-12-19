@@ -13,10 +13,9 @@
                 <Border Margin="10"
                         Width="720"
                         HorizontalAlignment="Left"
-                        CornerRadius="15"
-                        Background="#000232">
+                        Style="{DynamicResource BorderForProfile}">
                     <StackPanel Orientation="Vertical" Margin="20">
-                        <TextBlock Foreground="#00FF00"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="26"
                                    TextWrapping="Wrap"
                                    FontWeight="Bold"
@@ -24,7 +23,7 @@
                             Золоте правило: Сліпий набір
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    LineHeight="24"
                                    TextWrapping="Wrap">
@@ -33,7 +32,7 @@
                             Ваші пальці мають запам'ятати розташування клавіш на рівні рефлексів.
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    Margin="0,15,0,0"
                                    TextWrapping="Wrap"
@@ -42,14 +41,14 @@
                             На клавішах "F" та "J" є спеціальні виступи, щоб ви могли зорієнтуватися на дотик.
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="22"
                                    FontWeight="Bold"
                                    Margin="0,20,0,10">
                             Правильне положення:
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    LineHeight="24"
                                    TextWrapping="Wrap">
@@ -63,10 +62,9 @@
                 <Border Margin="10"
                         Width="720"
                         HorizontalAlignment="Right"
-                        CornerRadius="15"
-                        Background="#000232">
+                        Style="{DynamicResource BorderForProfile}">
                     <StackPanel Orientation="Vertical" Margin="20">
-                        <TextBlock Foreground="#FFD700"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="26"
                                    TextWrapping="Wrap"
                                    FontWeight="Bold"
@@ -74,19 +72,19 @@
                             Особливості керування
                         </TextBlock>
                         
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    LineHeight="26"
                                    TextWrapping="Wrap">
                             У цьому тренажері діють особливі правила для максимальної ефективності:
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    Margin="10,10,0,0"
                                    TextWrapping="Wrap">
-                            ❌ <Span FontWeight="Bold" Foreground="#FF4444">Клавіша Backspace вимкнена.</Span> Ви не можете стирати символи. Якщо ви помилилися, лінія під літерою стане червоною, а символ не з'явиться. Просто натисніть правильну літеру.<LineBreak/><LineBreak/>
-                            ✅ <Span FontWeight="Bold" Foreground="#4444FF">Пробіл — це підтвердження.</Span> Він спрацює лише тоді, коли слово набрано повністю і без жодної помилки.
+                            ❌ Клавіша Backspace вимкнена. Ви не можете стирати символи. Якщо ви помилилися, лінія під літерою стане червоною, а символ не з'явиться. Просто натисніть правильну літеру.<LineBreak/><LineBreak/>
+                            ✅ Пробіл — це підтвердження. Він спрацює лише тоді, коли слово набрано повністю і без жодної помилки.
                         </TextBlock>
                     </StackPanel>
                 </Border>
@@ -94,10 +92,9 @@
                 <Border Margin="10"
                         Width="720"
                         HorizontalAlignment="Left"
-                        CornerRadius="15"
-                        Background="#000232">
+                        Style="{DynamicResource BorderForProfile}">
                     <StackPanel Orientation="Vertical" Margin="20">
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="24"
                                    TextWrapping="Wrap"
                                    FontWeight="Bold"
@@ -105,7 +102,7 @@
                             Поради щодо швидкості та точності
                         </TextBlock>
                         
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    LineHeight="26"
                                    TextWrapping="Wrap">
@@ -114,14 +111,14 @@
                             • <Span FontWeight="Bold">Забудьте про погляд вниз:</Span> Навіть швидкий погляд на клавіші руйнує ваш ритм і сповільнює прогрес.
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="22"
                                    FontWeight="Bold"
                                    Margin="0,20,0,10">
                             Правильна постава:
                         </TextBlock>
 
-                        <TextBlock Foreground="White"
+                        <TextBlock Style="{DynamicResource TextBlockForProfile}"
                                    FontSize="18"
                                    LineHeight="26"
                                    TextWrapping="Wrap">
